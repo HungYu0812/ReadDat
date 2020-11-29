@@ -48,7 +48,8 @@ namespace CCC
         {
             string filepath = datDir;
             string[] data = File.ReadAllLines(filepath);
-            Bitmap bmp = new Bitmap(512, 512);
+            string[] test = data[1].Split('\t');
+            Bitmap bmp = new Bitmap(data.Length, test.Length);
             int lineNumber = 0;
             foreach (string line in data)
             {
