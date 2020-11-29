@@ -44,7 +44,7 @@ namespace CCC
                 //image.Save(destFilePath + @"\pic_" + i.ToString() + ".tif", System.Drawing.Imaging.ImageFormat.Tiff);
             }
         }
-        private static void datToTiff(string datDir, string number, string destFilePath)
+        private static void datToTiff(string datDir, string number, string destFilePath, int gain)
         {
             string filepath = datDir;
             string[] data = File.ReadAllLines(filepath);
@@ -56,14 +56,14 @@ namespace CCC
                 //Console.WriteLine(newData.Length);
                 for (int i = 0; i < newData.Length; i++)
                 {
-                    int intensity = int.Parse(newData[i]) / 500;
+                    int intensity = int.Parse(newData[i]) / gain;
                     bmp.SetPixel(lineNumber, i, Color.FromArgb(intensity, intensity, intensity));
                 }
                 lineNumber++;
             }
             bmp.Save(destFilePath + @"\" + number + ".tif", ImageFormat.Tiff);
         }
-        private static void ReadPhotos(string photoDir, string destFilePath)
+        private static void ReadPhotos(string photoDir, string destFilePath, int gain)
         {
             DirectoryInfo folder = new DirectoryInfo(photoDir);
             foreach (FileInfo file in folder.GetFiles("*.dat"))
@@ -71,13 +71,15 @@ namespace CCC
                 string name = file.Name;
                 Console.WriteLine(name);
                 string newName = Path.GetFileNameWithoutExtension(name);
-                datToTiff(photoDir + @"\" + name, newName, destFilePath);
+                datToTiff(photoDir + @"\" + name, newName, destFilePath, gain);
             }
         }
         static void Main(string[] args)
         {
             Console.WriteLine("Enter filename:");
             string fileName = Console.ReadLine();
+            Console.WriteLine("Enter gain:");
+            int gain = Console.ReadLine();
             string directoryName = @".\" + fileName;
             string destFilePath = @".\Output";
             if (Directory.Exists(destFilePath))
@@ -90,7 +92,7 @@ namespace CCC
                 Console.WriteLine("Create new directory, {0}.", destFilePath);
             }
             //ReadPhotos(directoryName);
-            ReadPhotos(directoryName, destFilePath);
+            ReadPhotos(directoryName, destFilePath, gain);
             //datToTiff(@"C:\Users\陳鴻羽\Desktop\1017\fly1\500v 10v 5us 70deg 048_Image.dat", @"\2", destFilePath);
 
             //Image image = Image.FromFile(@"C:\Users\陳鴻羽\Desktop\1017\fly1\500v 10v 5us 70deg 048_Image.dat");
