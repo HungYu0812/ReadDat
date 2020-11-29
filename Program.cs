@@ -56,7 +56,8 @@ namespace CCC
                 //Console.WriteLine(newData.Length);
                 for (int i = 0; i < newData.Length; i++)
                 {
-                    int intensity = int.Parse(newData[i]) / gain;
+
+                    int intensity = Convert.ToInt32(Convert.ToDouble(newData[i])) / gain;
                     bmp.SetPixel(lineNumber, i, Color.FromArgb(intensity, intensity, intensity));
                 }
                 lineNumber++;
