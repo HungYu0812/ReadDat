@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "4elJjQlEDFInzPDxK85wSvJ1SJTNk+tZEL6L2eVjhIKKfknJ9KnGvSMvWUADLlbijg5XJ9Tn8+WHvaJ2sMNVRA==",
+  "dgSpecHash": "OOEJRgoUhPCmGs4d0yNQzpC6Uh6/RTXCV4zWVG3Uqn4AAXo/UsiAHsc5xm3bCry39l+g/rroudXmalFp30Obpw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\陳鴻羽\\Desktop\\MICbyHY\\MICbyHY.csproj",
+  "projectFilePath": "D:\\VScode\\C#\\MICbyHY\\MICbyHY.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\陳鴻羽\\.nuget\\packages\\microsoft.netcore.platforms\\5.0.0\\microsoft.netcore.platforms.5.0.0.nupkg.sha512",
     "C:\\Users\\陳鴻羽\\.nuget\\packages\\microsoft.win32.systemevents\\5.0.0\\microsoft.win32.systemevents.5.0.0.nupkg.sha512",

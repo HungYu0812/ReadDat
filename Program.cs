@@ -79,7 +79,7 @@ namespace CCC
             Console.WriteLine("Enter filename:");
             string fileName = Console.ReadLine();
             Console.WriteLine("Enter gain:");
-            int gain = Console.ReadLine();
+            int gain = Int32.Parse(Console.ReadLine());
             string directoryName = @".\" + fileName;
             string destFilePath = @".\Output";
             if (Directory.Exists(destFilePath))
